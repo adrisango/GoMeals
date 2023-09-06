@@ -126,7 +126,7 @@ Both the front end and backend are using NGINX as an HTTP server.
           listen 80;
           listen [::]:80;
   
-          server_name csci5308vm23.research.cs.dal.ca;
+          server_name $server_name;
   
           location / {
                proxy_pass http://localhost:8080/;
@@ -142,9 +142,7 @@ Both the front end and backend are using NGINX as an HTTP server.
 
 `$ systemctl restart nginx`
 
-- The backend Spring Boot is now configured and running with NGINX, open a browser and access it with the URL: 
-
-` http://csci5308vm23.research.cs.dal.ca:8080/ `
+- The backend Spring Boot is now configured and running with NGINX!
 
 - To enable / disable the gomeals service to reflect any new changes made to the backend jar, run the following commands:
 
@@ -204,7 +202,7 @@ files:
            root /var/www/html/react/;
            index index.html index.html;
   
-           server_name csci5308vm23@csci5308vm23.research.cs.dal.ca;
+           server_name $server_name;
   
   }
 
