@@ -1,0 +1,9 @@
+#customerPollsHeader{
+    text-shadow: 2px 2px 5px lightgrey;
+    padding-top: 1em;
+}
+#customerPolls{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 3em 4em 3em 4em;
+  }

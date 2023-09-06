@@ -1,0 +1,8 @@
+#paymentHistoryHeader{
+    text-shadow: 2px 2px 5px lightgrey;
+    padding: 1em;
+}
+
+#paymentHistoryTable{
+    padding-bottom:4em;
+}

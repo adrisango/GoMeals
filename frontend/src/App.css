@@ -1,0 +1,196 @@
+.App {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+root {
+  height: 100vh;
+}
+
+.supplier-dashboard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.appc {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+.body{
+  background-color: #FEDEFF;
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+}
+.mechco{
+
+  display:inline-block;
+  justify-content: center;
+  /*border-left: 2rem;*/
+  /*margin-left: 15rem;*/
+  margin-top: 5rem;
+  /* width: 60%; */
+  align-items: flex-start;
+  background-color: #EEE9DA;
+  box-shadow: 10px 10px dimgrey;
+}
+h3{
+  align-content: end;
+}
+hr{
+  border: none;
+  height: 3px;
+  background-color: black;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.containers {
+  display: flex;
+  justify-content: center;
+  /* align-items: center;
+  margin-right: 10%; */
+}
+
+.card-containers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /* margin-right: 10%; */
+
+}
+.supplierCard{
+  Margin:50px;
+}
+
+
+.customerlist-table {
+ background-color: #efefef;
+ border-radius: 14px;
+ padding: 2%;
+}
+
+.profile-item hr {
+  margin: 1% 0% 1.5% 0%;
+}
+
+.my-notifications-container {
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.my-notifications-header {
+  background-color: #f0f0f0;
+  color: #333;
+  
+}
+
+.my-notifications-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.my-notifications-item:last-child {
+  border-bottom: none;
+}
+
+.my-notification{
+  position: absolute;
+}
+.customer-profile {
+ text-align: left;
+ padding: 2%;
+ border: #efefef 0.5rem;
+ border-style: solid;
+ border-radius: 14px;
+}
+
+.customer-profile-page {
+ background-color: #efefef;
+}
+
+.profile-item {
+ padding: 1.5% 0%;
+}
+
+.profile-item hr {
+margin: 1% 0% 1.5% 0%;
+}
+
+
+.customerlist-table tr:hover{
+cursor: pointer;
+}
+
+#heroLine{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titleVendor{
+  padding: 2em 2em 0 2em;
+}
+
+.filterButton{
+  margin: 1.5em;
+}
+
+#listSuppliers{
+  padding :2em;
+}
+
+#listSuppliersCardContainer{
+
+}
+
+
+.swal-button{
+  background-color: blue;
+}
+
+.swal-text{
+  color:black;
+  font-size: large;
+}
+.Box{
+  display: flex;
+  justify-content: center;
+}

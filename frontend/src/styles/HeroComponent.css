@@ -1,0 +1,40 @@
+.hero {
+    background-image: url('../resources/NoOrders.jpg');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-content {
+    text-align: center;
+    color: darkblue;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-button {
+    background-color: #fff;
+    color: #333;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .cta-button:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  

@@ -1,0 +1,80 @@
+
+stages:
+  - build
+  - test
+  - designite
+  - deployment
+
+build:
+  stage: build
+  tags:
+    - r2
+  script:
+    - cd GoMeals/backend
+    - echo "Starting build stage . . ."
+    - cat /etc/os-release
+    - chmod +x ./gradlew
+    - ./gradlew build
+    - java -version
+    - echo "Build complete!"
+
+test-services:
+  stage: test
+  tags:
+    - r2
+  script:
+    - cd GoMeals/backend
+    - echo "Starting test stage . . ."
+    - chmod +x ./gradlew
+    - ./gradlew test
+    - echo "Test stage completed!"
+   
+code-quality:
+  stage: designite
+  tags:
+    - r2
+  script:
+    - wget "https://www.designite-tools.com/static/download/DJE/DesigniteJava.jar"
+    - java -jar DesigniteJava.jar -i $CI_PROJECT_DIR -o $CI_PROJECT_DIR
+    - echo "Saving csv files in artifacts . . ."
+  artifacts:
+    paths:
+      - ArchitectureSmells.csv
+      - DesignSmells.csv
+      - ImplementationSmells.csv
+      - MethodMetrics.csv
+      - TestabilitySmells.csv
+      - TestSmells.csv
+      - TypeMetrics.csv
+
+deploy-backend:
+  stage: deployment
+  tags:
+    - r2
+  script:
+    - cd GoMeals/backend
+    - chmod +x ./gradlew
+    - ./gradlew build
+    - echo "Creating java jar . . ."
+    - ./gradlew assemble
+    - sudo rm -rf /home/csci5308vm23/backendjar/*
+    - sudo cp /home/gitlab-runner/builds/bfh6m6xq/0/courses/2023-winter/csci-5308/group23/GoMeals/backend/build/libs/gomeals-0.0.1-SNAPSHOT.jar /home/csci5308vm23/backendjar/
+    - sudo systemctl daemon-reload
+    - sudo systemctl restart gomeals
+    - sudo systemctl status gomeals
+    - echo " Backend deployed successfully !"
+
+deploy-frontend:
+  stage: deployment
+  tags:
+    - r2
+  script: 
+    - cd GoMeals/frontend
+    - node -v
+    - rm -rf node_modules
+    - npm install --legacy-peer-deps
+    - npm run build
+    - sudo rm -rf /var/www/html/react/*
+    - sudo cp -r /home/gitlab-runner/builds/bfh6m6xq/0/courses/2023-winter/csci-5308/group23/GoMeals/frontend/build/* /var/www/html/react/
+    - sudo systemctl restart nginx 
+    - echo " Frontend deployed succesfully ! "
